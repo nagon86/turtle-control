@@ -1,0 +1,5 @@
+# Node modules
+node_modules/*
+# Build artefacts
+dist/*
+webpack.config.js
