@@ -31,8 +31,11 @@
   "scripts": {
     "test": "echo \"Error: no tests installed\" && exit 1",
     "build": "webpack",
+    "prestart:server": "tsc",
     "start:dev": "webpack serve",
+    "start:server": "node ./dist/server/server.js",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --quiet",
     "lint:fix": "eslint \"**/*.{js,ts,tsx}\" --quiet --fix"
-  }
+  },
+  "type": "module"
 }
