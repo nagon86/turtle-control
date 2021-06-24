@@ -33,13 +33,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no tests installed\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --config ./webpack.config.js",
     "prestart:server": "tsc",
-    "start:dev": "webpack serve",
+    "start:dev": "webpack -w --config webpack.config.cjs",
     "start:server": "node ./dist/server/server.js",
     "dev:server": "concurrently --kill-others \"tsc -w\" \"nodemon ./dist/server/server.js\"",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --quiet",
-    "lint:fix": "eslint \"**/*.{js,ts,tsx}\" --quiet --fix"
+    "lint:fix": "eslint \"**/*.{js,ts,tsx}\" --quiet --fix",
+    "dev:frontend": "npm run webpack-dev-server -- --env.mode development --hot",
+    "webpack-dev-server": "webpack-dev-server",
+    "webpack": "webpack"
   },
   "type": "module"
 }
